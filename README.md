@@ -1,2 +1,3 @@
 # rock-paper-scissors
 It's a console based rock paper scissors game. Maybe my first little project with JS.
+I may convert it with GUI later... or may not...
