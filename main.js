@@ -6,7 +6,7 @@ function getComputerChoice(){
         case 1:
             return 'paper';
         case 2:
-            return 'scissor';
+            return 'scissors';
         default:
             return;
     }
@@ -14,7 +14,7 @@ function getComputerChoice(){
 
 
 function getHumanChoice(){
-    return prompt("Enter rock, paper or scissor: ").toLowerCase();
+    return prompt("Enter rock, paper or scissors: ").toLowerCase();
 }
 
 let humanScore = 0;
@@ -22,29 +22,19 @@ let computerScore = 0;
 
 function playRound(humanChoice, computerChoice){
 
-    if(humanChoice === 'rock' && computerChoice === 'scissor'){
+    if( (humanChoice === 'rock' && computerChoice === 'scissors') ||
+        (humanChoice === 'scissors' && computerChoice === 'paper') ||
+        (humanChoice === 'paper' && computerChoice === 'rock')
+    ){
         humanScore++;
-        alert('You Win! Your Rock Beats Scissor');
+        alert('You Win! Your ' + humanChoice + ' Beats ' + computerChoice);
     }
-    else if(humanChoice === 'scissor' && computerChoice === 'paper'){
+    else if((computerChoice === 'rock' &&  humanChoice === 'scissors') ||
+            (computerChoice === 'scissors' && humanChoice === 'paper') ||
+            (computerChoice  === 'paper' && humanChoice === 'rock')
+    ){
         humanScore++;
-        alert('You Win! Your Scissor Beats Paper');
-    }
-    else if(humanChoice === 'paper' && computerChoice === 'rock'){
-        humanScore++;
-        alert('You Win! Your Paper Beats Rock');
-    }
-    else if( computerChoice === 'rock' &&  humanChoice === 'scissor'){
-        computerScore++;
-        alert('Computer Wins!  Your Scissor Beaten By Rock');
-    }
-    else if(computerChoice === 'scissor' && humanChoice === 'paper'){
-        computerScore++;
-        alert('Computer Wins! Your Paper Beaten Scissor');
-    }
-    else if(computerChoice  === 'paper' && humanChoice === 'rock'){
-        computerScore++;
-        alert('Computer Wins! Your Rock Beaten Paper');
+        alert('You Win! Your ' + humanChoice + ' Beaten By ' + computerChoice);
     }
     else if(computerChoice == humanChoice){
         alert("Tie");
