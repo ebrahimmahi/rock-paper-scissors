@@ -1,0 +1,2 @@
+# rock-paper-scissors
+It's a console based rock paper scissors game. Maybe my first little project with JS.
