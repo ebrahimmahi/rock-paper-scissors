@@ -46,10 +46,25 @@ function playRound(humanChoice, computerChoice){
         computerScore++;
         alert('Computer Wins! Your Rock Beaten Paper');
     }
+    else if(computerChoice == humanChoice){
+        alert("Tie");
+    }
 
     alert("Your Score: " + humanScore + " and Computers Score: " + computerScore);
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-playRound(humanSelection, computerSelection);
+for(let i = 1; i <= 5; i++){
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection);
+}
+
+if(humanScore > computerScore){
+    alert("Congratulations, You Won The Match");
+}
+else if(humanScore < computerScore){
+    alert("Computer Wins");
+}
+else{
+    alert("It's a Tie!");
+}
