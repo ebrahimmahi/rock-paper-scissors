@@ -1,0 +1,29 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: #E0F7FA;
+    color: #006064;
+}
+
+button{
+    margin: 10px;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    background-color: #80DEEA;
+}
+
+
+.score {
+    background-color: rgba(255,255,255,0.2);
+    color: #004D40;
+    padding: 15px;
+    border-radius: 12px;
+    margin: 20px 0;
+    font-size: 1.2em;
+    text-align: center;
+}
