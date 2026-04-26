@@ -32,7 +32,6 @@ function gameOver(){
 }
 
 function playRound(humanChoice){
-    if(humanScore == 5 || computerScore == 5) gameOver()
 
     const msg = document.querySelector(".msg")
     const score = document.querySelector(".score")
@@ -44,20 +43,22 @@ function playRound(humanChoice){
         (humanChoice === 'paper' && computerChoice === 'rock')
     ){
         humanScore++;
-        msg.textContent = 'You Win! Your ' + humanChoice + ' Beats ' + computerChoice
+        msg.textContent = 'Won! Your ' + humanChoice + ' Beats ' + computerChoice
     }
     else if((computerChoice === 'rock' &&  humanChoice === 'scissors') ||
             (computerChoice === 'scissors' && humanChoice === 'paper') ||
             (computerChoice  === 'paper' && humanChoice === 'rock')
     ){
         computerScore++;
-         msg.textContent = 'You Win! Your ' + humanChoice + ' Beaten By ' + computerChoice
+         msg.textContent = 'Lost! Your ' + humanChoice + ' Beaten By ' + computerChoice
     }
     else if(computerChoice === humanChoice){
-         msg.textContent = "It's a Tie";
+         msg.textContent = "It's a Tie"
     }
 
-    score.textContent = "Your Score: " + humanScore + " and Computers Score: " + computerScore;
+    score.textContent = "Your Score: " + humanScore + " and Computers Score: " + computerScore
+
+    if(humanScore == 5 || computerScore == 5) gameOver()
 }
 
 document.querySelector("#rock").addEventListener("click", () => playRound("rock"))
